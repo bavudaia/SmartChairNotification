@@ -1,3 +1,10 @@
+ <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -39,4 +46,12 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/log_token" />
 
+    <Button
+        android:id="@+id/logTokenButtonTest"
+        android:layout_width="@dimen/standard_field_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/log_token" />
+
 </LinearLayout>
+ </ScrollView>

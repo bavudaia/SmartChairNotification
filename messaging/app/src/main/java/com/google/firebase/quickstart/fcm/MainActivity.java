@@ -19,6 +19,9 @@ package com.google.firebase.quickstart.fcm;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -83,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button logTokenButton = findViewById(R.id.logTokenButton);
         logTokenButton.setOnClickListener(new View.OnClickListener() {
+            /*
             @Override
             public void onClick(View v) {
                 // Get token
@@ -93,7 +97,20 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, msg);
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
             }
+            */
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://ec2-52-34-200-126.us-west-2.compute.amazonaws.com:5000/login"));
+                startActivity(browserIntent);
+            }
+
         });
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        // ignore orientation/keyboard change
+        super.onConfigurationChanged(newConfig);
     }
 
 }
